@@ -17,7 +17,7 @@ export default function Slider() {
       }
       setTimeout(() => {
         setSlideTimeOut(false);
-      }, "2000");
+      }, "1500");
     }
   };
 
@@ -31,7 +31,7 @@ export default function Slider() {
       }
       setTimeout(() => {
         setSlideTimeOut(false);
-      }, "2000");
+      }, "1500");
     }
   };
 
