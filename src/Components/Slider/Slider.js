@@ -5,22 +5,35 @@ import dataSlider from "./dataSlider";
 
 export default function Slider() {
   const [slideIndex, setslideIndex] = useState(1);
+  const [slideTimeOut, setSlideTimeOut] = useState(false);
 
   const nextSlide = () => {
+    if (slideTimeOut === false) {
+      setSlideTimeOut(true);
       if (slideIndex !== dataSlider.length) {
         setslideIndex(slideIndex + 1);
       } else if (slideIndex === dataSlider.length) {
         setslideIndex(1);
       }
+      setTimeout(() => {
+        setSlideTimeOut(false);
+      }, "2000");
     }
+  };
 
   const prevSlide = () => {
+    if (slideTimeOut === false) {
+      setSlideTimeOut(true);
       if (slideIndex !== 1) {
         setslideIndex(slideIndex - 1);
       } else if (slideIndex === 1) {
         setslideIndex(dataSlider.length);
       }
+      setTimeout(() => {
+        setSlideTimeOut(false);
+      }, "2000");
     }
+  };
 
   const moveDot = (index) => {
     setslideIndex(index);
